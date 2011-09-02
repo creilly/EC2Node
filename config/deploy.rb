@@ -5,7 +5,7 @@ set :application, "node"
 set :user, "ubuntu"
 set :host, "ec2-184-72-12-121.us-west-1.compute.amazonaws.com"
 set :deploy_to, "/var/www/node"
-set :use_sudo, true
+set :use_sudo, false
 
 set :scm, :git
 set :repository, "git@github.com:jackdreilly/EC2Node.git"
