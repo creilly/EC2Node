@@ -1,0 +1,16 @@
+Bluepill.application("app") do |app|
+  app.process("node") do |process|
+    process.working_dir = "/var/www/node/current"
+    process.start_command = "/usr/bin/env NODE_ENV=acceptance app_port=80 node server.js"
+    process.pid_file = "/var/www/node/shared/pids/node.pid"
+    process.stdout = process.stderr = "/var/www/node/shared/log/node.log"
+    process.daemonize = true
+
+    process.start_grace_time = 10.seconds
+    process.stop_grace_time = 10.seconds
+    process.restart_grace_time = 20.seconds
+
+    process.checks :cpu_usage, :every => 10.seconds, :below => 5, :times => 3
+    process.checks :mem_usage, :every => 10.seconds, :below => 100.megabytes, :times => [3,5]
+  end
+end
