@@ -1,7 +1,7 @@
 Bluepill.application("app") do |app|
   app.process("node") do |process|
     process.working_dir = "/var/www/node/current"
-    process.start_command = "/usr/bin/env NODE_ENV=acceptance app_port=80 node server.js"
+    process.start_command = "/usr/bin/env NODE_ENV=acceptance app_port=80 node app.js"
     process.pid_file = "/var/www/node/shared/pids/node.pid"
     process.stdout = process.stderr = "/var/www/node/shared/log/node.log"
     process.daemonize = true
