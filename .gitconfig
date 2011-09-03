@@ -1,0 +1,28 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = git@github.com:jackdreilly/EC2Node.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[alias]
+	acd = !git add . && git commit -a -m 'default statement'
+	acdr = !git acd && git rebase
+	acdp = !git acd && git push
+	prune-all = !git remote | xargs -n 1 git remote prune
+	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+        whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+	sortdiff = !sh -c 'git diff "$@" | grep "^[+-]" | sort --key=1.2 | uniq -u -s1'
+	gb = git branch
+	gba = git branch  -a
+	gc = git commit -v
+	gd = git diff | mate
+	gl = git pull
+	gp = git push
+	gst = git status
