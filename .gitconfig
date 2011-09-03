@@ -13,6 +13,8 @@
 [alias]
 	acd = !git add . && git commit -a -m 'default statement'
 	acdr = !git acd && git rebase
+	acdrm = !git acdr master
+	acdrmp = !git acdrm && git push
 	acdp = !git acd && git push
 	prune-all = !git remote | xargs -n 1 git remote prune
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
