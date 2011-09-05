@@ -29,8 +29,5 @@ nowjs.on 'connect', ->
 nowjs.on 'disconnect', ->
   console.log 'Left: ' + @.now.name
 
-everyone.now.distributeMessage = (message) ->
-  everyone.now.receiveMessage @.now.name, message
-
-everyone.now.loginUser = ->
-  everyone.now.receiveMessage @.now.name, 'has logged in!'
+everyone.now.newKitten = ->
+  everyone.now.newKittenId Math.ceil(Math.random()*400, '1')

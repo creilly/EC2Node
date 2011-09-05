@@ -1,12 +1,6 @@
 $(document).ready ->
-  now.receiveMessage = (name,message) ->
-    $('#messages').append '<br>' + name + ": " + message
-
   $('#send-button') .click ->
-      now.distributeMessage $('#text-input').val()
-      $ '#text-input' .val ''
-      $ '#text-input' .focus()
-
+      now.newKitten()
   message = '''
   what is your name?
   <br />
@@ -16,4 +10,7 @@ $(document).ready ->
 
   $.prompt message, callback: (v,m,f) ->
     now.name = f.name
-    now.loginUser()
+
+  now.newKittenId = (kId, person) ->
+    $('#kitten img').attr 'src','http://placekitten.com/200/' + kId
+    $('#kitten p').text = person

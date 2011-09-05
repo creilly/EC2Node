@@ -26,10 +26,7 @@
   nowjs.on('disconnect', function() {
     return console.log('Left: ' + this.now.name);
   });
-  everyone.now.distributeMessage = function(message) {
-    return everyone.now.receiveMessage(this.now.name, message);
-  };
-  everyone.now.loginUser = function() {
-    return everyone.now.receiveMessage(this.now.name, 'has logged in!');
+  everyone.now.newKitten = function() {
+    return everyone.now.newKittenId(Math.ceil(Math.random() * 400, '1'));
   };
 }).call(this);
