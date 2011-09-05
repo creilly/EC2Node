@@ -3,6 +3,7 @@
     <head>
         <title><%= title %>
         </title>
+				<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
 				<link rel="stylesheet" type="text/css" href="/impromptu/default.css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js">
         </script>
@@ -14,6 +15,15 @@
         </script>
     </head>
     <body>
+    <div class="topbar">
+        <div class="fill">
+            <div class="container">
+                <h3><a href="#">Cat Mat</a></h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
 				<%- body %>
+    </div>
     </body>
 </html>
