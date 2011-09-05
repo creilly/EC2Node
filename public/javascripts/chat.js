@@ -20,7 +20,8 @@
       return $('#cat-chat').prepend($('<p>').text(person + ': ' + message));
     };
     return $('#text-submit').click(function() {
-      return now.dispatchMessage($('#text-input').attr('value'));
+      now.dispatchMessage($('#text-input').attr('value'));
+      return $('#text-input').attr('value', '');
     });
   });
 }).call(this);

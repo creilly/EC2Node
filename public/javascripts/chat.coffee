@@ -22,3 +22,4 @@ $(document).ready ->
 
   $('#text-submit').click ->
     now.dispatchMessage $('#text-input').attr 'value'
+    $('#text-input').attr 'value', ''
