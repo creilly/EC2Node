@@ -23,7 +23,7 @@ set :branch, "development"
 set :deploy_via, :remote_cache
 role :app, host
 
-bluepill = 'rvmsudo bluepill'
+bluepill = 'bluepill'
 
 default_run_options[:pty] = true
 

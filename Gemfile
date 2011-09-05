@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'capistrano'
-gem 'capistrano-ext'
+# Deploy with Capistrano
+gem ‘capistrano-ext’
 gem 'bluepill'
