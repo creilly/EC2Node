@@ -11,5 +11,5 @@ div '.row', ->
         'Cat Chat'
       div '#chatter.form-stacked', ->
         input '#text-input', type: 'text', name: 'text-input',
-        input '#text-submit.btn.large', type: 'submit',
+        input '#text-submit.btn.large', type: 'submit', -> 'Cat Gab'
       div '#cat-chat', ->
