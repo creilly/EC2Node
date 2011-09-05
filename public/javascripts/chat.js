@@ -12,7 +12,7 @@
     });
     return now.newKittenId = function(kId, person) {
       $('#kitten img').attr('src', 'http://placekitten.com/200/' + kId);
-      return $('#kitten p').text = person;
+      return $('#kitten p').text(person);
     };
   });
 }).call(this);
