@@ -13,4 +13,4 @@ $(document).ready ->
 
   now.newKittenId = (kId, person) ->
     $('#kitten img').attr 'src','http://placekitten.com/200/' + kId
-    $('#kitten p').text person
+    $('#kitten p').text person + ' set the kitten!'
