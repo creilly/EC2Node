@@ -13,7 +13,7 @@ app.set 'view engine', 'ejs'
 app.get '/', (req,res) ->
   res.render 'chat', locals:
     title:
-      'NowJS + Express Chat'
+      'Cat Mat'
     pagescript:
       'chat.js'
 
@@ -29,5 +29,13 @@ nowjs.on 'connect', ->
 nowjs.on 'disconnect', ->
   console.log 'Left: ' + @.now.name
 
+randInt = (min,max) -> min + Math.ceil(Math.random()*(max - min), '1')
+
 everyone.now.newKitten = ->
-  everyone.now.newKittenId Math.ceil(Math.random()*400, '1'), @.now.name
+  everyone.now.newKittenId randInt(200,400), randInt(200,600), @.now.name
+
+everyone.now.loginUser = ->
+  everyone.now.receiveMessage @.now.name, ' wants to cat chat with you!'
+
+everyone.now.dispatchMessage = (message) ->
+  everyone.now.receiveMessage @.now.name, message

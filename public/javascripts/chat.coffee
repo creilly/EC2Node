@@ -10,7 +10,15 @@ $(document).ready ->
 
   $.prompt message, callback: (v,m,f) ->
     now.name = f.name
+    now.loginUser()
+    now.newKitten()
 
-  now.newKittenId = (kId, person) ->
-    $('#kitten img').attr 'src','http://placekitten.com/200/' + kId
-    $('#kitten p').text person + ' set the kitten!'
+  now.newKittenId = (kw, kh, person) ->
+    $('#kitten img').attr 'src','http://placekitten.com/' + kw + '/' + kh
+    $('#kitten h2').text person + ' set the kitten!'
+
+  now.receiveMessage = (person,message) ->
+    $('#cat-chat').prepend $('<p>').text(person + ': ' + message)
+
+  $('#text-submit').click ->
+    now.dispatchMessage $('#text-input').attr 'value'

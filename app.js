@@ -1,5 +1,5 @@
 (function() {
-  var app, everyone, express, nowjs;
+  var app, everyone, express, nowjs, randInt;
   express = require('express');
   app = express.createServer();
   /*
@@ -11,7 +11,7 @@
   app.get('/', function(req, res) {
     return res.render('chat', {
       locals: {
-        title: 'NowJS + Express Chat',
+        title: 'Cat Mat',
         pagescript: 'chat.js'
       }
     });
@@ -26,7 +26,16 @@
   nowjs.on('disconnect', function() {
     return console.log('Left: ' + this.now.name);
   });
+  randInt = function(min, max) {
+    return min + Math.ceil(Math.random() * (max - min), '1');
+  };
   everyone.now.newKitten = function() {
-    return everyone.now.newKittenId(Math.ceil(Math.random() * 400, '1'), this.now.name);
+    return everyone.now.newKittenId(randInt(200, 400), randInt(200, 600), this.now.name);
+  };
+  everyone.now.loginUser = function() {
+    return everyone.now.receiveMessage(this.now.name, ' wants to cat chat with you!');
+  };
+  everyone.now.dispatchMessage = function(message) {
+    return everyone.now.receiveMessage(this.now.name, message);
   };
 }).call(this);

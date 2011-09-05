@@ -7,12 +7,20 @@
     message = 'what is your name?\n<br />\n<input type="text" id="name" name="name" />';
     $.prompt(message, {
       callback: function(v, m, f) {
-        return now.name = f.name;
+        now.name = f.name;
+        now.loginUser();
+        return now.newKitten();
       }
     });
-    return now.newKittenId = function(kId, person) {
-      $('#kitten img').attr('src', 'http://placekitten.com/200/' + kId);
-      return $('#kitten p').text(person + ' set the kitten!');
+    now.newKittenId = function(kw, kh, person) {
+      $('#kitten img').attr('src', 'http://placekitten.com/' + kw + '/' + kh);
+      return $('#kitten h2').text(person + ' set the kitten!');
     };
+    now.receiveMessage = function(person, message) {
+      return $('#cat-chat').prepend($('<p>').text(person + ': ' + message));
+    };
+    return $('#text-submit').click(function() {
+      return now.dispatchMessage($('#text-input').attr('value'));
+    });
   });
 }).call(this);
