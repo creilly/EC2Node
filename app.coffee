@@ -30,4 +30,4 @@ nowjs.on 'disconnect', ->
   console.log 'Left: ' + @.now.name
 
 everyone.now.newKitten = ->
-  everyone.now.newKittenId Math.ceil(Math.random()*400, '1')
+  everyone.now.newKittenId Math.ceil(Math.random()*400, '1'), @.now.name

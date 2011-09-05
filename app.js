@@ -27,6 +27,6 @@
     return console.log('Left: ' + this.now.name);
   });
   everyone.now.newKitten = function() {
-    return everyone.now.newKittenId(Math.ceil(Math.random() * 400, '1'));
+    return everyone.now.newKittenId(Math.ceil(Math.random() * 400, '1'), this.now.name);
   };
 }).call(this);
