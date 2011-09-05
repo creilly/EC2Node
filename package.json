@@ -4,7 +4,7 @@
   , "private": true
   , "dependencies": {
       "express": "2.4.6"
-    , "ejs": ">= 0.0.1",
+    , "coffeekup": ">= 0.3.0",
 		  "now": ">= 0.7.4",
 			"coffee-script": ">= 0.0.1"
   }

@@ -7,7 +7,8 @@
   */
   app.set('views', __dirname + '/views');
   app.use(express.static(__dirname + '/public'));
-  app.set('view engine', 'ejs');
+  app.set('view engine', 'coffee');
+  app.register('.coffee', require('coffeekup').adapters.express);
   app.get('/', function(req, res) {
     return res.render('chat', {
       locals: {

@@ -23,3 +23,6 @@ $(document).ready ->
   $('#text-submit').click ->
     now.dispatchMessage $('#text-input').attr 'value'
     $('#text-input').attr 'value', ''
+
+  $('#text-input').keypress (e) ->
+    $('#text-submit').click() if e.which == 13

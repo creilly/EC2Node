@@ -19,9 +19,14 @@
     now.receiveMessage = function(person, message) {
       return $('#cat-chat').prepend($('<p>').text(person + ': ' + message));
     };
-    return $('#text-submit').click(function() {
+    $('#text-submit').click(function() {
       now.dispatchMessage($('#text-input').attr('value'));
       return $('#text-input').attr('value', '');
+    });
+    return $('#text-input').keypress(function(e) {
+      if (e.which === 13) {
+        return $('#text-submit').click();
+      }
     });
   });
 }).call(this);

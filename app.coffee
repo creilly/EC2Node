@@ -1,14 +1,15 @@
 express = require 'express'
 app = express.createServer()
 
+
 ###
 config
 ###
 
 app.set 'views',__dirname + '/views'
 app.use express.static __dirname + '/public'
-app.set 'view engine', 'ejs'
-
+app.set 'view engine', 'coffee'
+app.register '.coffee', require('coffeekup').adapters.express
 
 app.get '/', (req,res) ->
   res.render 'chat', locals:
