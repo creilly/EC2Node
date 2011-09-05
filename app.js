@@ -30,7 +30,7 @@
     return min + Math.ceil(Math.random() * (max - min), '1');
   };
   everyone.now.newKitten = function() {
-    return everyone.now.newKittenId(randInt(200, 400), randInt(200, 600), this.now.name);
+    return everyone.now.newKittenId(randInt(200, 300), randInt(200, 300), this.now.name);
   };
   everyone.now.loginUser = function() {
     return everyone.now.receiveMessage(this.now.name, ' wants to cat chat with you!');

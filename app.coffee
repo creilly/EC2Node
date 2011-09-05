@@ -32,7 +32,7 @@ nowjs.on 'disconnect', ->
 randInt = (min,max) -> min + Math.ceil(Math.random()*(max - min), '1')
 
 everyone.now.newKitten = ->
-  everyone.now.newKittenId randInt(200,400), randInt(200,600), @.now.name
+  everyone.now.newKittenId randInt(200,300), randInt(200,300), @.now.name
 
 everyone.now.loginUser = ->
   everyone.now.receiveMessage @.now.name, ' wants to cat chat with you!'
